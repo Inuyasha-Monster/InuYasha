@@ -18,6 +18,7 @@ using AspectCore.Extensions.DataAnnotations;
 using AspectCore.Extensions.DependencyInjection;
 using AspectCore.Injector;
 using InuYasha.Intercptor;
+using InuYasha.Option;
 using InuYasha.Service;
 
 namespace InuYasha
@@ -78,6 +79,26 @@ namespace InuYasha
 
             #endregion
 
+            // 读取配置文件转换为强类型对象
+            services.Configure<MyOption>(Configuration.GetSection("MyOption"));
+
+            services.Configure<MyOption>("codeConfig", x =>
+            {
+                x.Name = "djlCoder";
+                x.Age = 22;
+            });
+
+            //services.PostConfigure<MyOption>(x =>
+            //{
+            //    x.Name = "new";
+            //    x.Age = 18;
+            //});
+
+            //services.PostConfigureAll<MyOption>(x =>
+            //{
+            //    x.Name = "all";
+            //    x.Age = 22;
+            //});
 
             services.AddMvc().AddControllersAsServices();
 
