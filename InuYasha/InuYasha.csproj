@@ -14,6 +14,7 @@
     <PackageReference Include="AspectCore.Extensions.DataAnnotations" Version="0.2.4" />
     <PackageReference Include="AspectCore.Extensions.DependencyInjection" Version="0.2.4" />
     <PackageReference Include="AspectCore.Extensions.Reflection" Version="0.2.4" />
+    <PackageReference Include="HtmlAgilityPack" Version="1.6.7" />
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0" />
   </ItemGroup>
 
@@ -27,6 +28,7 @@
     <PackageReference Include="App.Metrics.Extensions.Reporting.InfluxDB" Version="1.2.0" />
     <PackageReference Include="App.Metrics.Formatters.Json" Version="2.0.0-alpha" />
     <PackageReference Include="App.Metrics.Reporting.InfluxDB" Version="2.0.0-alpha" />
+    <PackageReference Include="System.Text.Encoding.CodePages" Version="4.5.0-preview1-25914-04" />
   </ItemGroup>
 
 </Project>

@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
+using System.Text.Encodings.Web;
+using System.Text.Unicode;
 using System.Threading.Tasks;
 using App.Metrics;
 using AspectCore.APM.ApplicationProfiler;
@@ -78,6 +81,11 @@ namespace InuYasha
             }
 
             #endregion
+
+            services.AddSingleton(HtmlEncoder.Create(UnicodeRanges.All));
+
+            System.Text.EncodingProvider provider = System.Text.CodePagesEncodingProvider.Instance;
+            Encoding.RegisterProvider(provider);
 
             // 读取配置文件转换为强类型对象
             services.Configure<MyOption>(Configuration.GetSection("MyOption"));
